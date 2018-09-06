@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="Luka" id="initial_insert">
+        <insert tableName="competition">
+            <column name="category" value="World Cup"></column>
+            <column name="year" value="2018"></column>
+            <column name="details" value="World Cup in Russia - 2018"></column>
+            <column name="rounds" value="7"></column>
+            <column name="entry_from" value="2018-05-05"></column>
+            <column name="entry_to" value="2018-06-14"></column>
+            <column name="start_date" value="2018-06-15"></column>
+            <column name="end_date" value="2018-07-15"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="A"></column>
+            <column name="team" value="Russia"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="A"></column>
+            <column name="team" value="Uruguay"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="A"></column>
+            <column name="team" value="Egypt"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="A"></column>
+            <column name="team" value="Saudi Arabia"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="B"></column>
+            <column name="team" value="Spain"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="B"></column>
+            <column name="team" value="Portugal"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="B"></column>
+            <column name="team" value="Morocco"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="B"></column>
+            <column name="team" value="Iran"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="C"></column>
+            <column name="team" value="France"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="C"></column>
+            <column name="team" value="Denmark"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="C"></column>
+            <column name="team" value="Peru"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="C"></column>
+            <column name="team" value="Australia"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="D"></column>
+            <column name="team" value="Argentina"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="D"></column>
+            <column name="team" value="Croatia"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="D"></column>
+            <column name="team" value="Iceland"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="D"></column>
+            <column name="team" value="Nigeria"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="E"></column>
+            <column name="team" value="Brazil"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="E"></column>
+            <column name="team" value="Switzerland"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="E"></column>
+            <column name="team" value="Serbia"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="E"></column>
+            <column name="team" value="Costa Rica"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="F"></column>
+            <column name="team" value="Germany"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="F"></column>
+            <column name="team" value="Mexico"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="F"></column>
+            <column name="team" value="Sweden"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="F"></column>
+            <column name="team" value="South Korea"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="G"></column>
+            <column name="team" value="Belgium"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="G"></column>
+            <column name="team" value="England"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="G"></column>
+            <column name="team" value="Tunisia"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="G"></column>
+            <column name="team" value="Panama"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="H"></column>
+            <column name="team" value="Poland"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="H"></column>
+            <column name="team" value="Colombia"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="H"></column>
+            <column name="team" value="Senegal"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="1"></column>
+            <column name="group_name" value="H"></column>
+            <column name="team" value="Japan"></column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

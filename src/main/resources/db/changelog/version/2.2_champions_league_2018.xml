@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="Luka" id="initial_insert">
+        <insert tableName="competition">
+            <column name="category" value="Champions League"></column>
+            <column name="year" value="2018"></column>
+            <column name="details" value="Champions League - 2018"></column>
+            <column name="rounds" value="10"></column>
+            <column name="entry_from" value="2018-05-05"></column>
+            <column name="entry_to" value="2018-09-14"></column>
+            <column name="start_date" value="2018-09-15"></column>
+            <column name="end_date" value="2019-07-15"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="A"></column>
+            <column name="team" value="Atletico Madric"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="A"></column>
+            <column name="team" value="Club Brugge"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="A"></column>
+            <column name="team" value="Borussia Dortmund"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="A"></column>
+            <column name="team" value="Monaco"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="B"></column>
+            <column name="team" value="Tottenham Hotspur"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="B"></column>
+            <column name="team" value="Barcelona"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="B"></column>
+            <column name="team" value="PSV Eindhoven"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="B"></column>
+            <column name="team" value="Internazionale"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="C"></column>
+            <column name="team" value="Napoli"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="C"></column>
+            <column name="team" value="Liverpool"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="C"></column>
+            <column name="team" value="Paris Saint-Germain"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="C"></column>
+            <column name="team" value="Crvena Zvezda"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="D"></column>
+            <column name="team" value="Porto"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="D"></column>
+            <column name="team" value="Galatasaray"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="D"></column>
+            <column name="team" value="Lokomotiv Moscow"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="D"></column>
+            <column name="team" value="Schalke 04"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="E"></column>
+            <column name="team" value="Bayern Munich"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="E"></column>
+            <column name="team" value="Ajax"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="E"></column>
+            <column name="team" value="AEK Athens"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="E"></column>
+            <column name="team" value="Benfica"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="F"></column>
+            <column name="team" value="Lyon"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="F"></column>
+            <column name="team" value="Shakhtar Donetsk"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="F"></column>
+            <column name="team" value="1899 Hoffenheim"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="F"></column>
+            <column name="team" value="Manchester City"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="G"></column>
+            <column name="team" value="CSKA Moscow"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="G"></column>
+            <column name="team" value="Real Madrid"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="G"></column>
+            <column name="team" value="Roma"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="G"></column>
+            <column name="team" value="Viktoria Plzen"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="H"></column>
+            <column name="team" value="Juventus"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="H"></column>
+            <column name="team" value="Young Boys"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="H"></column>
+            <column name="team" value="Manchester United"></column>
+        </insert>
+        <insert tableName="group_stage">
+            <column name="competition_id" value="2"></column>
+            <column name="group_name" value="H"></column>
+            <column name="team" value="Valencia"></column>
+        </insert>
+        <!-- round 1
+                    <column name="match_time" valueDate="2018-09-18T21:00:00"></column>
+                    -->
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Club Brugge"></column>
+            <column name="team2" value="Borussia Dortmund"></column>
+            <column name="match_time" valueDate="2018-09-04T12:43:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Monaco"></column>
+            <column name="team2" value="Atletico Madrid"></column>
+            <column name="match_time" valueDate="2018-09-04T12:45:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Barcelona"></column>
+            <column name="team2" value="PSV Eindhoven"></column>
+            <column name="match_time" valueDate="2018-09-04T12:46:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Internazionale"></column>
+            <column name="team2" value="Tottenham Hotspur"></column>
+            <column name="match_time" valueDate="2018-09-18T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Liverpool"></column>
+            <column name="team2" value="Paris Saint-Germain"></column>
+            <column name="match_time" valueDate="2018-09-18T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Crvena Zvezda"></column>
+            <column name="team2" value="Napoli"></column>
+            <column name="match_time" valueDate="2018-09-18T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Galatasaray"></column>
+            <column name="team2" value="Lokomotiv Moscow"></column>
+            <column name="match_time" valueDate="2018-09-18T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Schalke 04"></column>
+            <column name="team2" value="Porto"></column>
+            <column name="match_time" valueDate="2018-09-18T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Benfica"></column>
+            <column name="team2" value="Bayern Munich"></column>
+            <column name="match_time" valueDate="2018-09-19T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Ajax"></column>
+            <column name="team2" value="AEK Athens"></column>
+            <column name="match_time" valueDate="2018-09-19T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Manchester City"></column>
+            <column name="team2" value="Lyon"></column>
+            <column name="match_time" valueDate="2018-09-19T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Shakhtar Donetsk"></column>
+            <column name="team2" value="1899 Hoffenheim"></column>
+            <column name="match_time" valueDate="2018-09-19T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Real Madrid"></column>
+            <column name="team2" value="Roma"></column>
+            <column name="match_time" valueDate="2018-09-19T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Viktoria Plzen"></column>
+            <column name="team2" value="CSKA Moscow"></column>
+            <column name="match_time" valueDate="2018-09-19T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Young Boys"></column>
+            <column name="team2" value="Manchester United"></column>
+            <column name="match_time" valueDate="2018-09-19T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Valencia"></column>
+            <column name="team2" value="Juventus"></column>
+            <column name="match_time" valueDate="2018-09-19T21:00:00"></column>
+        </insert>
+        <!-- round 2 -->
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Atlético Madrid"></column>
+            <column name="team2" value="Club Brugge"></column>
+            <column name="match_time" valueDate="2018-10-03T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Borussia Dortmund"></column>
+            <column name="team2" value="Monaco"></column>
+            <column name="match_time" valueDate="2018-10-03T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Tottenham Hotspur"></column>
+            <column name="team2" value="Barcelona"></column>
+            <column name="match_time" valueDate="2018-10-03T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="PSV Eindhoven"></column>
+            <column name="team2" value="Internazionale"></column>
+            <column name="match_time" valueDate="2018-10-03T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Paris Saint-Germain"></column>
+            <column name="team2" value="Crvena Zvezda"></column>
+            <column name="match_time" valueDate="2018-10-03T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Napoli"></column>
+            <column name="team2" value="Liverpool"></column>
+            <column name="match_time" valueDate="2018-10-03T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Lokomotiv Moscow"></column>
+            <column name="team2" value="Schalke 04"></column>
+            <column name="match_time" valueDate="2018-10-03T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Porto"></column>
+            <column name="team2" value="Galatasaray"></column>
+            <column name="match_time" valueDate="2018-10-03T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Bayern Munich"></column>
+            <column name="team2" value="Ajax"></column>
+            <column name="match_time" valueDate="2018-10-02T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="AEK Athens"></column>
+            <column name="team2" value="Benfica"></column>
+            <column name="match_time" valueDate="2018-10-02T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="1899 Hoffenheim"></column>
+            <column name="team2" value="Manchester City"></column>
+            <column name="match_time" valueDate="2018-10-02T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Lyon"></column>
+            <column name="team2" value="Shakhtar Donetsk"></column>
+            <column name="match_time" valueDate="2018-10-02T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="CSKA Moscow"></column>
+            <column name="team2" value="Real Madrid"></column>
+            <column name="match_time" valueDate="2018-10-02T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Roma"></column>
+            <column name="team2" value="Ciktoria Plzen"></column>
+            <column name="match_time" valueDate="2018-10-02T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Juventus"></column>
+            <column name="team2" value="Young Boys"></column>
+            <column name="match_time" valueDate="2018-10-02T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Manchester United"></column>
+            <column name="team2" value="Valencia"></column>
+            <column name="match_time" valueDate="2018-10-02T21:00:00"></column>
+        </insert>
+        <!-- round 3 -->
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Club Brugge"></column>
+            <column name="team2" value="Monaco"></column>
+            <column name="match_time" valueDate="2018-10-24T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Borussia Dortmund"></column>
+            <column name="team2" value="Atletico Madrid"></column>
+            <column name="match_time" valueDate="2018-10-24T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Barcelona"></column>
+            <column name="team2" value="Internazionale"></column>
+            <column name="match_time" valueDate="2018-10-24T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="PSV Eindhoven"></column>
+            <column name="team2" value="Tottenham Hotspur"></column>
+            <column name="match_time" valueDate="2018-10-24T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Liverpool"></column>
+            <column name="team2" value="Crvena Zvezda"></column>
+            <column name="match_time" valueDate="2018-10-24T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Paris Saint-Germain"></column>
+            <column name="team2" value="Napoli"></column>
+            <column name="match_time" valueDate="2018-10-24T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Galatasaray"></column>
+            <column name="team2" value="Schalke 04"></column>
+            <column name="match_time" valueDate="2018-10-24T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Lokomotiv Moscow"></column>
+            <column name="team2" value="Porto"></column>
+            <column name="match_time" valueDate="2018-10-24T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="AEK Athens"></column>
+            <column name="team2" value="Bayern Munich"></column>
+            <column name="match_time" valueDate="2018-10-23T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Ajax"></column>
+            <column name="team2" value="Benfica"></column>
+            <column name="match_time" valueDate="2018-10-23T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="1899 Hoffenheim"></column>
+            <column name="team2" value="Lyon"></column>
+            <column name="match_time" valueDate="2018-10-23T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Shakhtar Donetsk"></column>
+            <column name="team2" value="Manchester City"></column>
+            <column name="match_time" valueDate="2018-10-23T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Real Madrid"></column>
+            <column name="team2" value="Viktoria Plzen"></column>
+            <column name="match_time" valueDate="2018-10-23T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Roma"></column>
+            <column name="team2" value="CSKA Moscow"></column>
+            <column name="match_time" valueDate="2018-10-23T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Young Boys"></column>
+            <column name="team2" value="Valencia"></column>
+            <column name="match_time" valueDate="2018-10-23T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Manchester United"></column>
+            <column name="team2" value="Juventus"></column>
+            <column name="match_time" valueDate="2018-10-23T21:00:00"></column>
+        </insert>
+        <!-- round 4 -->
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Atlético Madrid"></column>
+            <column name="team2" value="Borussia Dortmund"></column>
+            <column name="match_time" valueDate="2018-11-06T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Monaco"></column>
+            <column name="team2" value="Club Brugge"></column>
+            <column name="match_time" valueDate="2018-11-06T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Tottenham Hotspur"></column>
+            <column name="team2" value="PSV Eindhoven"></column>
+            <column name="match_time" valueDate="2018-11-06T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Internazionale"></column>
+            <column name="team2" value="Barcelona"></column>
+            <column name="match_time" valueDate="2018-11-06T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Napoli"></column>
+            <column name="team2" value="Paris Saint-Germain"></column>
+            <column name="match_time" valueDate="2018-11-06T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Crvena Zvezda"></column>
+            <column name="team2" value="Liverpool"></column>
+            <column name="match_time" valueDate="2018-11-06T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Porto"></column>
+            <column name="team2" value="Lokomotiv Moscow"></column>
+            <column name="match_time" valueDate="2018-11-06T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Schalke 04"></column>
+            <column name="team2" value="Galatasaray"></column>
+            <column name="match_time" valueDate="2018-11-06T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Benfica"></column>
+            <column name="team2" value="Ajax"></column>
+            <column name="match_time" valueDate="2018-11-07T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Bayern Munich"></column>
+            <column name="team2" value="AEK Athens"></column>
+            <column name="match_time" valueDate="2018-11-07T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Manchester City"></column>
+            <column name="team2" value="Shakhtar Donetsk"></column>
+            <column name="match_time" valueDate="2018-11-07T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Lyon"></column>
+            <column name="team2" value="1899 Hoffenheim"></column>
+            <column name="match_time" valueDate="2018-11-07T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="CSKA Moscow"></column>
+            <column name="team2" value="Roma"></column>
+            <column name="match_time" valueDate="2018-11-07T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Viktoria Plzen"></column>
+            <column name="team2" value="Real Madrid"></column>
+            <column name="match_time" valueDate="2018-11-07T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Juventus"></column>
+            <column name="team2" value="Manchester United"></column>
+            <column name="match_time" valueDate="2018-11-07T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Valencia"></column>
+            <column name="team2" value="Young Boys"></column>
+            <column name="match_time" valueDate="2018-11-07T18:55:00"></column>
+        </insert>
+        <!-- round 5 -->
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Atlético Madrid"></column>
+            <column name="team2" value="Monaco"></column>
+            <column name="match_time" valueDate="2018-11-28T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Borussia Dortmund"></column>
+            <column name="team2" value="Club Brugge"></column>
+            <column name="match_time" valueDate="2018-11-28T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Tottenham Hotspur"></column>
+            <column name="team2" value="Internazionale"></column>
+            <column name="match_time" valueDate="2018-11-28T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="PSV Eindhoven"></column>
+            <column name="team2" value="Barcelona"></column>
+            <column name="match_time" valueDate="2018-11-28T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Paris Saint-Germain"></column>
+            <column name="team2" value="Liverpool"></column>
+            <column name="match_time" valueDate="2018-11-28T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Napoli"></column>
+            <column name="team2" value="Crvena Zvezda"></column>
+            <column name="match_time" valueDate="2018-11-28T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Lokomotiv Moscow"></column>
+            <column name="team2" value="Galatasaray"></column>
+            <column name="match_time" valueDate="2018-11-28T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Porto"></column>
+            <column name="team2" value="Schalke 04"></column>
+            <column name="match_time" valueDate="2018-11-28T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Bayern Munich"></column>
+            <column name="team2" value="Benfica"></column>
+            <column name="match_time" valueDate="2018-11-27T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="AEK Athens"></column>
+            <column name="team2" value="Ajax"></column>
+            <column name="match_time" valueDate="2018-11-27T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="1899 Hoffenheim"></column>
+            <column name="team2" value="Shakhtar Donetsk"></column>
+            <column name="match_time" valueDate="2018-11-27T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Lyon"></column>
+            <column name="team2" value="Manchester City"></column>
+            <column name="match_time" valueDate="2018-11-27T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="CSKA Moscow"></column>
+            <column name="team2" value="Viktoria Plzen"></column>
+            <column name="match_time" valueDate="2018-11-27T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Roma"></column>
+            <column name="team2" value="Real Madrid"></column>
+            <column name="match_time" valueDate="2018-11-27T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Juventus"></column>
+            <column name="team2" value="Valencia"></column>
+            <column name="match_time" valueDate="2018-11-27T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Manchester United"></column>
+            <column name="team2" value="Young Boys"></column>
+            <column name="match_time" valueDate="2018-11-27T21:00:00"></column>
+        </insert>
+        <!-- round 6 -->
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Club Brugge"></column>
+            <column name="team2" value="Atletico Madrid"></column>
+            <column name="match_time" valueDate="2018-12-11T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Monaco"></column>
+            <column name="team2" value="Borussia Dortmund"></column>
+            <column name="match_time" valueDate="2018-12-11T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Barcelona"></column>
+            <column name="team2" value="Tottenham Hotspur"></column>
+            <column name="match_time" valueDate="2018-12-11T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Internazionale"></column>
+            <column name="team2" value="PSV Eindhoven"></column>
+            <column name="match_time" valueDate="2018-12-11T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Liverpool"></column>
+            <column name="team2" value="Napoli"></column>
+            <column name="match_time" valueDate="2018-12-11T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Crvena Zvezda"></column>
+            <column name="team2" value="Paris Saint-Germain"></column>
+            <column name="match_time" valueDate="2018-12-11T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Galatasaray"></column>
+            <column name="team2" value="Porto"></column>
+            <column name="match_time" valueDate="2018-12-11T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Schalke 04"></column>
+            <column name="team2" value="Lokomotiv Moscow"></column>
+            <column name="match_time" valueDate="2018-12-11T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Benfica"></column>
+            <column name="team2" value="AEK Athens"></column>
+            <column name="match_time" valueDate="2018-12-12T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Ajax"></column>
+            <column name="team2" value="Bayern Munich"></column>
+            <column name="match_time" valueDate="2018-12-12T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Manchester City"></column>
+            <column name="team2" value="1899 Hoffenheim"></column>
+            <column name="match_time" valueDate="2018-12-12T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Shakhtar Donetsk"></column>
+            <column name="team2" value="Lyon"></column>
+            <column name="match_time" valueDate="2018-12-12T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Real Madrid"></column>
+            <column name="team2" value="CSKA Moscow"></column>
+            <column name="match_time" valueDate="2018-12-12T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Viktoria Plzen"></column>
+            <column name="team2" value="Roma"></column>
+            <column name="match_time" valueDate="2018-12-12T18:55:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Young Boys"></column>
+            <column name="team2" value="Juventus"></column>
+            <column name="match_time" valueDate="2018-12-12T21:00:00"></column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="competition_id" value="2"></column>
+            <column name="team1" value="Valencia"></column>
+            <column name="team2" value="Manchester United"></column>
+            <column name="match_time" valueDate="2018-12-12T21:00:00"></column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

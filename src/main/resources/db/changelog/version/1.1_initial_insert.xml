@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="Luka" id="initial_insert">
+        <insert tableName="category_codebook">
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="category_codebook">
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Barcelona"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Real Madrid"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Atletico Madrid"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Valencia"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Bayern Munich"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Schalke 04"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="1899 Hoffenheim"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Borussia Dortmund"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Manchester City"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Manchester United"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Tottenham Hotspurs"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Liverpool"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Juventus"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Napoli"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Roma"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Internazionale"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Paris Saint-Germain"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Monaco"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Lyon"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Lokomotiv Moscow"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="CSKA Moscow"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Porto"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Shakhtar Donetsk"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Club Brugge"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Galatasaray"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Viktoria Plzen"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Dinamo Zagreb"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Ajax"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Young Boys"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="MOL Vidi"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Dynamo Kyiv"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Crvena Zvezda"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Red Bull Salzburg"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="BATE Borisov"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="PSV Eindhoven"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="AEK Athens"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Benfica"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="PAOK"></column>
+            <column name="category" value="Champions League"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Croatia"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Brazil"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Russia"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Germany"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Portugal"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Argentina"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Belgium"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Poland"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="France"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Spain"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Peru"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Switzerland"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="England"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Colombia"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Mexico"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Uruguay"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Denmark"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Iceland"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Costa Rica"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Sweden"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Tunisia"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Egypt"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Senegal"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Iran"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Serbia"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Nigeria"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Australia"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Japan"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Morocco"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Panama"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="South Korea"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="team_codebook">
+            <column name="team" value="Saudi Arabia"></column>
+            <column name="category" value="World Cup"></column>
+        </insert>
+        <insert tableName="round_codebook">
+            <column name="round" value="Final"></column>
+            <column name="number_of_teams" value="2"></column>
+        </insert>
+        <insert tableName="round_codebook">
+            <column name="round" value="Semi Final"></column>
+            <column name="number_of_teams" value="4"></column>
+        </insert>
+        <insert tableName="round_codebook">
+            <column name="round" value="Quarter Final"></column>
+            <column name="number_of_teams" value="8"></column>
+        </insert>
+        <insert tableName="round_codebook">
+            <column name="round" value="Eighth Final"></column>
+            <column name="number_of_teams" value="16"></column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
