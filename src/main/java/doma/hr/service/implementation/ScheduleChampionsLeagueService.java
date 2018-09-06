@@ -24,6 +24,11 @@ public class ScheduleChampionsLeagueService implements IScheduleService {
         this.competitionRepository = competitionRepository;
     }
 
+    @Override
+    public String getName() {
+        return "Champions League";
+    }
+
     public void generateGroupSchedule(Integer competitionId) throws Exception{
 
         SchedulerValidation schedulerValidation = new SchedulerValidation(competitionRepository);

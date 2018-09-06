@@ -1,27 +1,26 @@
 package doma.hr.factory;
 
-import doma.hr.repository.CompetitionRepository;
-import doma.hr.repository.ScheduleRepository;
 import doma.hr.service.IScheduleService;
-import doma.hr.service.implementation.ScheduleChampionsLeagueService;
-import doma.hr.service.implementation.ScheduleWorldCupService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+
+@Component
 public class ScheduleServiceFactory {
 
-    @Autowired
-    private CompetitionRepository competitionRepository;
+    private List<IScheduleService> scheduleServiceList;
 
     @Autowired
-    private ScheduleRepository scheduleRepository;
+    public ScheduleServiceFactory(List<IScheduleService> scheduleServiceList) {
+        this.scheduleServiceList = scheduleServiceList;
+    }
 
     public IScheduleService getScheduleService(String competitionCategory) {
-        if (competitionCategory.equalsIgnoreCase("World Cup"))
-            return new ScheduleWorldCupService(scheduleRepository, competitionRepository);
-
-        if (competitionCategory.equalsIgnoreCase("Champions League"))
-            return new ScheduleChampionsLeagueService(scheduleRepository, competitionRepository);
-
+    for (IScheduleService service : scheduleServiceList) {
+        if (service.getName().equals(competitionCategory))
+            return service;
+    }
         return null;
     }
 }
