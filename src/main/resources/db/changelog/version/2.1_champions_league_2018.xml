@@ -175,26 +175,23 @@
             <column name="group_name" value="H"></column>
             <column name="team" value="Valencia"></column>
         </insert>
-        <!-- round 1
-                    <column name="match_time" valueDate="2018-09-18T21:00:00"></column>
-                    -->
         <insert tableName="schedule">
             <column name="competition_id" value="2"></column>
             <column name="team1" value="Club Brugge"></column>
             <column name="team2" value="Borussia Dortmund"></column>
-            <column name="match_time" valueDate="2018-09-04T12:43:00"></column>
+            <column name="match_time" valueDate="2018-09-18T21:00:00"></column>
         </insert>
         <insert tableName="schedule">
             <column name="competition_id" value="2"></column>
             <column name="team1" value="Monaco"></column>
             <column name="team2" value="Atletico Madrid"></column>
-            <column name="match_time" valueDate="2018-09-04T12:45:00"></column>
+            <column name="match_time" valueDate="2018-09-18T21:00:00"></column>
         </insert>
         <insert tableName="schedule">
             <column name="competition_id" value="2"></column>
             <column name="team1" value="Barcelona"></column>
             <column name="team2" value="PSV Eindhoven"></column>
-            <column name="match_time" valueDate="2018-09-04T12:46:00"></column>
+            <column name="match_time" valueDate="2018-09-18T18:55:00"></column>
         </insert>
         <insert tableName="schedule">
             <column name="competition_id" value="2"></column>

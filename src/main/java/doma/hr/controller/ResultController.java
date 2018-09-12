@@ -1,6 +1,5 @@
 package doma.hr.controller;
 
-import doma.hr.Application;
 import doma.hr.model.Match;
 import doma.hr.repository.CompetitionRepository;
 import doma.hr.repository.ResultRepository;

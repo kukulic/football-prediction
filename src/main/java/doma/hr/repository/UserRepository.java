@@ -24,6 +24,12 @@ public class UserRepository {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
+    public List<User> getAllUsers() {
+        String query = "SELECT * FROM user";
+
+        return (List<User>)jdbcTemplate.query(query, new BeanPropertyRowMapper(User.class));
+    }
+
     public void registerUser(User user) {
         String query = "INSERT INTO user(username, password, email, first_name, last_name, role) " +
                 "VALUES (:username, :password, :email, :firstName, :lastName, :role)";

@@ -3,6 +3,7 @@ package doma.hr.repository;
 import doma.hr.Application;
 import doma.hr.model.Competition;
 import doma.hr.model.Rank;
+import doma.hr.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,14 +50,64 @@ public class CompetitionRepository {
         return namedParameterJdbcTemplate.queryForObject(query, params, String.class);
     }
 
+    public List<Competition> getAllCompetiton() {
+        String query = "SELECT * FROM competition";
+
+        return jdbcTemplate.query(query, new CompetitionRowMapper());
+    }
+
     public List<Competition> getAllCompetiton(String category) {
         String query = "SELECT * FROM competition WHERE category =:category";
 
         Map<String,String> params = new HashMap<>();
         params.put("category", category);
 
+        return namedParameterJdbcTemplate.query(query, params, new CompetitionRowMapper());
+    }
+
+    public List<Competition> getEntryCompetitons(String username) {
+        String query = "SELECT * FROM competition c \n" +
+                "INNER JOIN competition_entry ce ON ce.competition_id = c.id\n" +
+                "WHERE ce.username = :username";
+
+        Map<String,String> params = new HashMap<>();
+        params.put("username", username);
 
         return namedParameterJdbcTemplate.query(query, params, new CompetitionRowMapper());
+    }
+
+    public List<String> getEntryCompetitionCategories(String username) {
+        String query = "SELECT c.category FROM competition_entry ce\n" +
+                "INNER JOIN competition c ON c.id = ce.competition_id\n" +
+                "WHERE ce.username = :username";
+
+        Map<String,String> params = new HashMap<>();
+        params.put("username", username);
+
+        return namedParameterJdbcTemplate.queryForList(query, params, String.class);
+    }
+
+    public Boolean checkIfExist(String username, Integer competitionId) {
+        String query = "SELECT COUNT(*) FROM competition_entry \n" +
+                "WHERE competition_id = :competitionId AND username = :username";
+
+        Map<String,Object> params = new HashMap<>();
+        params.put("competitionId", competitionId);
+        params.put("username", username);
+
+        return (namedParameterJdbcTemplate.queryForObject(query, params, Integer.class) == 1);
+    }
+
+    public String addUserToCompetition(String username, Integer competitionId) {
+        String query = "INSERT INTO competition_entry (competition_id, username)\n" +
+                "VALUES (:competitionId, :username)";
+
+        Map<String,Object> params = new HashMap<>();
+        params.put("competitionId", competitionId);
+        params.put("username", username);
+
+        namedParameterJdbcTemplate.update(query, params);
+        return username;
     }
 
     public boolean isCompetitionExist(Integer competitionId) {

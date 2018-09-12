@@ -7,7 +7,7 @@
 
   <include file="db/changelog/version/1.0_initial_table_creation.xml"/>
   <include file="db/changelog/version/1.1_initial_insert.xml"/>
+  <include file="db/changelog/version/1.2_admin_insert.xml"/>
   <include file="db/changelog/version/2.0_world_cup_2018.xml"/>
-  <include file="db/changelog/version/2.1_competitors_insert.xml"/>
-  <include file="db/changelog/version/2.2_champions_league_2018.xml"/>
+  <include file="db/changelog/version/2.1_champions_league_2018.xml"/>
 </databaseChangeLog> 

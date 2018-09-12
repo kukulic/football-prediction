@@ -2,6 +2,7 @@ package doma.hr.repository;
 
 import doma.hr.Application;
 import doma.hr.model.Match;
+import doma.hr.util.ConvertDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -97,9 +99,12 @@ public class PredictionRepository {
 
     public Match insertPrediction(Match matchPrediction){
         String query = "INSERT INTO prediction (match_id, username, team1_goals, team2_goals, winner, insert_time)\n" +
-                "VALUES (:match_id, :username, :team1_goals, :team2_goals, :winner, current_timestamp); ";
+                "VALUES (:match_id, :username, :team1_goals, :team2_goals, :winner, :time); ";
+
+
 
         Map<String,Object> params = this.mapPredictionParams(matchPrediction);
+        params.put("time", ConvertDate.gmttoLocalDate(new Date()));
 
         namedParameterJdbcTemplate.update(query, params);
         return matchPrediction;

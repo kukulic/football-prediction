@@ -127,7 +127,7 @@
         </createTable>
         <createTable tableName="schedule">
             <column name="match_id" type="int" autoIncrement="true">
-                <constraints nullable="false"/>
+                <constraints nullable="false" primaryKey="true" unique="true"/>
             </column>
             <column name="competition_id" type="int">
                 <constraints nullable="false"/>

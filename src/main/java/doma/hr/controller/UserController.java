@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin
 @RestController("/users")
 public class UserController {
@@ -31,5 +33,10 @@ public class UserController {
                             @RequestParam(value = "password") String password) {
 
         return userRepository.getUserRole(username, password);
+    }
+
+    @GetMapping("/getAllUsers")
+    public List<User> getAllUsers() {
+        return  userRepository.getAllUsers();
     }
 }
