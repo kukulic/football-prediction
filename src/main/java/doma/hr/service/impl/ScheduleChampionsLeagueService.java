@@ -1,9 +1,9 @@
-package doma.hr.service.implementation;
+package doma.hr.service.impl;
 
 import doma.hr.model.Match;
 import doma.hr.model.Team;
-import doma.hr.repository.CompetitionRepository;
-import doma.hr.repository.ScheduleRepository;
+import doma.hr.repository.impl.CompetitionRepository;
+import doma.hr.repository.impl.ScheduleRepository;
 import doma.hr.service.IScheduleService;
 import doma.hr.validation.SchedulerValidation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +29,7 @@ public class ScheduleChampionsLeagueService implements IScheduleService {
         return "Champions League";
     }
 
+    @Override
     public void generateGroupSchedule(Integer competitionId) throws Exception{
 
         SchedulerValidation schedulerValidation = new SchedulerValidation(competitionRepository);

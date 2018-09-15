@@ -2,8 +2,10 @@ package doma.hr.controller;
 
 import doma.hr.factory.ScheduleServiceFactory;
 import doma.hr.model.Competition;
-import doma.hr.repository.ScheduleRepository;
+import doma.hr.repository.impl.ScheduleRepository;
 import doma.hr.service.IScheduleService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +15,7 @@ import java.sql.Date;
 @RestController
 public class SchedulerController {
 
-    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SchedulerController.class);
+    private static final Logger log = LoggerFactory.getLogger(SchedulerController.class);
 
     private ScheduleRepository scheduleRepository;
     private ScheduleServiceFactory scheduleServiceFactory;

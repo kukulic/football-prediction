@@ -2,8 +2,8 @@ package doma.hr.controller;
 
 import doma.hr.model.Competition;
 import doma.hr.model.UserCompetition;
-import doma.hr.repository.CompetitionRepository;
-import doma.hr.service.CompetitionService;
+import doma.hr.repository.impl.CompetitionRepository;
+import doma.hr.service.impl.CompetitionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

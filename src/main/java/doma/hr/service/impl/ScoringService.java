@@ -1,9 +1,10 @@
-package doma.hr.service;
+package doma.hr.service.impl;
 
 import doma.hr.model.Match;
-import doma.hr.repository.PredictionRepository;
-import doma.hr.repository.ResultRepository;
-import doma.hr.repository.UserRepository;
+import doma.hr.repository.impl.PredictionRepository;
+import doma.hr.repository.impl.ResultRepository;
+import doma.hr.repository.impl.UserRepository;
+import doma.hr.service.IScoringService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class ScoringService {
+public class ScoringService implements IScoringService {
 
     private static final BigDecimal WINNER_HIT = new BigDecimal(1);
     private static final BigDecimal RESULT_HIT = new BigDecimal(2);
@@ -34,6 +35,7 @@ public class ScoringService {
         this.predictionRepository = predictionRepository;
     }
 
+    @Override
     public void calculateMatchScore(Integer matchId, Integer competitionId) {
 
         Integer numberOfUsers  = userRepository.numberOfUserInCompetition(competitionId);
@@ -83,10 +85,12 @@ public class ScoringService {
         }
     }
 
+    @Override
     public void calclulateRoundScore() {
 
     }
 
+    @Override
     public void calculateCompetitionScore() {
 
     }

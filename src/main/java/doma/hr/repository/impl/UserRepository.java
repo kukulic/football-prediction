@@ -1,6 +1,7 @@
-package doma.hr.repository;
+package doma.hr.repository.impl;
 
 import doma.hr.model.User;
+import doma.hr.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class UserRepository {
+public class UserRepository implements IUserRepository {
 
     private JdbcTemplate jdbcTemplate;
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -24,12 +25,14 @@ public class UserRepository {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
+    @Override
     public List<User> getAllUsers() {
         String query = "SELECT * FROM user";
 
         return (List<User>)jdbcTemplate.query(query, new BeanPropertyRowMapper(User.class));
     }
 
+    @Override
     public void registerUser(User user) {
         String query = "INSERT INTO user(username, password, email, first_name, last_name, role) " +
                 "VALUES (:username, :password, :email, :firstName, :lastName, :role)";
@@ -45,6 +48,7 @@ public class UserRepository {
         namedParameterJdbcTemplate.update(query, params);
     }
 
+    @Override
     public User getUserRole(String username, String password) {
         String query = "SELECT username, password, role FROM user WHERE username = :username AND password = :password";
 
@@ -55,6 +59,7 @@ public class UserRepository {
         return (User)namedParameterJdbcTemplate.queryForObject(query, params, new BeanPropertyRowMapper(User.class));
     }
 
+    @Override
     public User authenticateUser(User user) {
         String query = "SELECT * FROM user WHERE username = :username AND password = :password";
 
@@ -65,6 +70,7 @@ public class UserRepository {
         return (User)namedParameterJdbcTemplate.queryForObject(query, params, new BeanPropertyRowMapper(User.class));
     }
 
+    @Override
     public Integer numberOfUserInCompetition(Integer competitionId) {
         String query = "SELECT count(*) FROM competition_entry WHERE competition_id = :competitionId";
 
@@ -74,6 +80,7 @@ public class UserRepository {
         return namedParameterJdbcTemplate.queryForObject(query, params, Integer.class);
     }
 
+    @Override
     public List<String> usersInCompetition(Integer competitionId) {
         String query = "SELECT username FROM competition_entry WHERE competition_id = :competitionId";
 

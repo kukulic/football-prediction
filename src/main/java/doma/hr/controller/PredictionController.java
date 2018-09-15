@@ -1,8 +1,8 @@
 package doma.hr.controller;
 
 import doma.hr.model.Match;
-import doma.hr.repository.PredictionRepository;
-import doma.hr.service.PredicitionService;
+import doma.hr.repository.impl.PredictionRepository;
+import doma.hr.service.impl.PredicitionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

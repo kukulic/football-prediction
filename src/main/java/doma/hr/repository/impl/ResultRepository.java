@@ -1,17 +1,16 @@
-package doma.hr.repository;
+package doma.hr.repository.impl;
 
 import doma.hr.model.Match;
-import org.springframework.jdbc.core.RowMapper;
+import doma.hr.repository.IResultRepository;
+import doma.hr.rowmapper.ResultRowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 @Repository
-public class ResultRepository {
+public class ResultRepository implements IResultRepository {
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -19,6 +18,7 @@ public class ResultRepository {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
+    @Override
     public Match insertResult(Match matchResult) {
 
         String query = "INSERT INTO result (match_id, team1_goals, team2_goals, winner)\n" +
@@ -35,6 +35,7 @@ public class ResultRepository {
         return matchResult;
     }
 
+    @Override
     public Match getResult(Integer matchId) {
 
         String query = "SELECT r.match_id, s.team1, s.team2, r.team1_goals, r.team2_goals  FROM result r \n" +
@@ -47,20 +48,5 @@ public class ResultRepository {
         return namedParameterJdbcTemplate.queryForObject(query, params, new ResultRowMapper());
     }
 
-    public static class ResultRowMapper implements RowMapper<Match> {
-        @Override
-        public Match mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Match match = new Match();
 
-            match.setMatchId(rs.getInt("MATCH_ID"));
-            match.setTeam1(rs.getString("TEAM1"));
-            if (rs.getString("TEAM1_GOALS") != null)
-                match.setTeam1GoalsResult(rs.getInt("TEAM1_GOALS"));
-            match.setTeam2(rs.getString("TEAM2"));
-            if (rs.getString("TEAM2_GOALS") != null)
-                match.setTeam2GoalsResult(rs.getInt("TEAM2_GOALS"));
-
-            return match;
-        }
-    }
 }

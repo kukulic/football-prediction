@@ -1,8 +1,9 @@
-package doma.hr.service;
+package doma.hr.service.impl;
 
 import doma.hr.model.Match;
-import doma.hr.repository.PredictionRepository;
-import doma.hr.repository.ScheduleRepository;
+import doma.hr.repository.impl.PredictionRepository;
+import doma.hr.repository.impl.ScheduleRepository;
+import doma.hr.service.IPredictionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-public class PredicitionService {
+public class PredicitionService implements IPredictionService {
 
     private static final Logger log = LoggerFactory.getLogger(PredicitionService.class);
 
@@ -25,6 +26,7 @@ public class PredicitionService {
         this.scheduleRepository = scheduleRepository;
     }
 
+    @Override
     public Match savePrediction(Match matchPrediction) {
 
         Date matchTime = scheduleRepository.getMatchTime(matchPrediction.getMatchId());

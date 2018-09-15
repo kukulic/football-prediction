@@ -1,5 +1,6 @@
-package doma.hr.repository;
+package doma.hr.repository.impl;
 
+import doma.hr.repository.ITeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class TeamRepository {
+public class TeamRepository implements ITeamRepository {
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -18,6 +19,7 @@ public class TeamRepository {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
+    @Override
     public List<String> getAllTeams(String category) {
 
         String query="SELECT team FROM team_codebook WHERE category =:category";
@@ -28,6 +30,7 @@ public class TeamRepository {
         return namedParameterJdbcTemplate.queryForList(query, params, String.class);
     }
 
+    @Override
     public void addTeam(String team, String category) {
 
         String query="INSERT INTO team_codebook(team, category) VALUES (:team, :category)";

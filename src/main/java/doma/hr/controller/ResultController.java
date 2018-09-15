@@ -1,9 +1,9 @@
 package doma.hr.controller;
 
 import doma.hr.model.Match;
-import doma.hr.repository.CompetitionRepository;
-import doma.hr.repository.ResultRepository;
-import doma.hr.service.ScoringService;
+import doma.hr.repository.impl.CompetitionRepository;
+import doma.hr.repository.impl.ResultRepository;
+import doma.hr.service.impl.ScoringService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

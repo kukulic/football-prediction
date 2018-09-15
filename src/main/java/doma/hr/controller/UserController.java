@@ -1,9 +1,7 @@
 package doma.hr.controller;
 
 import doma.hr.model.User;
-import doma.hr.repository.UserRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import doma.hr.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,18 +11,17 @@ import java.util.List;
 @RestController("/users")
 public class UserController {
 
-    private static final Logger log = LoggerFactory.getLogger(UserController.class);
-
-    private UserRepository userRepository;
+    private IUserService userService;
 
     @Autowired
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserController(IUserService userService) {
+        this.userService = userService;
     }
 
     @PostMapping("/register")
     public void register(@RequestBody User user) {
-        userRepository.registerUser(user);
+
+        userService.registerUser(user);
     }
 
 
@@ -32,11 +29,12 @@ public class UserController {
     public User getUserRole(@RequestParam(value = "username") String username,
                             @RequestParam(value = "password") String password) {
 
-        return userRepository.getUserRole(username, password);
+        return userService.getUserRole(username, password);
     }
 
     @GetMapping("/getAllUsers")
     public List<User> getAllUsers() {
-        return  userRepository.getAllUsers();
+
+        return userService.getAllUsers();
     }
 }

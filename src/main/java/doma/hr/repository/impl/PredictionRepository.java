@@ -1,7 +1,10 @@
-package doma.hr.repository;
+package doma.hr.repository.impl;
 
-import doma.hr.Application;
 import doma.hr.model.Match;
+import doma.hr.repository.IPredictionRepository;
+import doma.hr.rowmapper.PredictionResultRowMapper;
+import doma.hr.rowmapper.PredictionRowMapper;
+import doma.hr.rowmapper.UserPredictionRowMapper;
 import doma.hr.util.ConvertDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,20 +12,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Repository
-public class PredictionRepository {
+public class PredictionRepository implements IPredictionRepository {
 
     private static final Logger log = LoggerFactory.getLogger(PredictionRepository.class);
 
@@ -36,6 +36,7 @@ public class PredictionRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    @Override
     public List<Match> getAllMatches(String username, Integer competitionId) {
 
         String query = "SELECT s.match_id, s.team1, s.team2, s.match_time FROM schedule s\n" +
@@ -51,6 +52,7 @@ public class PredictionRepository {
         return namedParameterJdbcTemplate.queryForList(query, params, Match.class);
     }
 
+    @Override
     public List<Match> getAllFinishedMatches() {
 
         String query = "SELECT s.match_id, s.team1, s.team2, s.match_time FROM schedule s\n" +
@@ -59,6 +61,7 @@ public class PredictionRepository {
         return jdbcTemplate.query(query, new BeanPropertyRowMapper(Match.class));
     }
 
+    @Override
     public List<Match> getAllAvailableMatches(Integer competitionId, String username) {
 
         String query = "SELECT s.match_ID, s.team1, p.team1_goals AS team1_goals_pred, s.team2,\n" +
@@ -77,6 +80,7 @@ public class PredictionRepository {
         return namedParameterJdbcTemplate.query(query, params, new PredictionRowMapper());
     }
 
+    @Override
     public List<Match> getAllHistoryMatches(Integer competitionId, String username) {
 
         String query = "SELECT s.match_id, s.team1, p.team1_goals AS team1_goals_pred, s.team2,\n " +
@@ -97,6 +101,7 @@ public class PredictionRepository {
         return namedParameterJdbcTemplate.query(query, params, new PredictionResultRowMapper());
     }
 
+    @Override
     public Match insertPrediction(Match matchPrediction){
         String query = "INSERT INTO prediction (match_id, username, team1_goals, team2_goals, winner, insert_time)\n" +
                 "VALUES (:match_id, :username, :team1_goals, :team2_goals, :winner, :time); ";
@@ -110,6 +115,7 @@ public class PredictionRepository {
         return matchPrediction;
     }
 
+    @Override
     public Match updatePrediction(Match matchPrediction){
         String query = "UPDATE prediction SET team1_goals = :team1_goals, \n" +
                 "team2_goals = :team2_goals, winner = :winner, update_time = current_timestamp  \n" +
@@ -121,6 +127,7 @@ public class PredictionRepository {
         return matchPrediction;
     }
 
+    @Override
     public boolean isMatchPredictionExist(Match matchPrediction){
         String query = "SELECT COUNT(*) FROM prediction \n" +
                 "WHERE match_id = :match_id AND username = :username";
@@ -132,6 +139,7 @@ public class PredictionRepository {
         return (namedParameterJdbcTemplate.queryForObject(query, params, Integer.class) == 1);
     }
 
+    @Override
     public Match getUserMatchPrediction(Integer matchId, String username) {
         Match match = new Match();
 
@@ -154,6 +162,7 @@ public class PredictionRepository {
         return match;
     }
 
+    @Override
     public void insertMatchScore(Integer matchId, String username, BigDecimal score) {
 
         String query = "UPDATE prediction SET score = :score \n" +
@@ -165,71 +174,6 @@ public class PredictionRepository {
         params.put("score", score);
 
         namedParameterJdbcTemplate.update(query, params);
-    }
-
-    public class UserPredictionRowMapper implements RowMapper<Match> {
-        @Override
-        public Match mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Match match = new Match();
-
-            match.setMatchId(rs.getInt("MATCH_ID"));
-            if (rs.getString("TEAM1_GOALS_PRED") != null)
-                match.setTeam1GoalsPrediction(rs.getInt("TEAM1_GOALS_PRED"));
-            if (rs.getString("TEAM2_GOALS_PRED") != null)
-                match.setTeam2GoalsPrediction(rs.getInt("TEAM2_GOALS_PRED"));
-            match.setWinnerPrediction(rs.getString("WINNER_PRED"));
-
-            return match;
-        }
-    }
-
-    public class PredictionRowMapper implements RowMapper<Match> {
-        @Override
-        public Match mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Match match = new Match();
-
-            match.setMatchId(rs.getInt("MATCH_ID"));
-            if (rs.getString("TEAM1") != null)
-                match.setTeam1(rs.getString("TEAM1"));
-            if (rs.getString("TEAM1_GOALS_PRED") != null)
-                match.setTeam1GoalsPrediction(rs.getInt("TEAM1_GOALS_PRED"));
-            if (rs.getString("TEAM2") != null)
-                match.setTeam2(rs.getString("TEAM2"));
-            if (rs.getString("TEAM2_GOALS_PRED") != null)
-                match.setTeam2GoalsPrediction(rs.getInt("TEAM2_GOALS_PRED"));
-            match.setWinnerPrediction(rs.getString("WINNER_PRED"));
-            match.setMatchTime(rs.getTimestamp("MATCH_TIME"));
-
-            return match;
-        }
-    }
-
-    public class PredictionResultRowMapper implements RowMapper<Match> {
-        @Override
-        public Match mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Match match = new Match();
-
-            match.setMatchId(rs.getInt("MATCH_ID"));
-            match.setTeam1(rs.getString("TEAM1"));
-            if (rs.getString("TEAM1_GOALS_PRED") != null)
-                match.setTeam1GoalsPrediction(rs.getInt("TEAM1_GOALS_PRED"));
-            match.setTeam2(rs.getString("TEAM2"));
-            if (rs.getString("TEAM2_GOALS_PRED") != null)
-                match.setTeam2GoalsPrediction(rs.getInt("TEAM2_GOALS_PRED"));
-            match.setWinnerPrediction(rs.getString("WINNER_PRED"));
-            if (rs.getString("TEAM1_GOALS_RES") != null)
-                match.setTeam1GoalsResult(rs.getInt("TEAM1_GOALS_RES"));
-            match.setTeam2(rs.getString("TEAM2"));
-            if (rs.getString("TEAM2_GOALS_RES") != null)
-                match.setTeam2GoalsResult(rs.getInt("TEAM2_GOALS_RES"));
-            if (rs.getString("WINNER_RES") != null)
-                match.setWinnerResult(rs.getString("WINNER_RES"));
-            if (rs.getString("SCORE") != null)
-                match.setUserScore(rs.getBigDecimal("SCORE"));
-            match.setMatchTime(rs.getTimestamp("MATCH_TIME"));
-
-            return match;
-        }
     }
 
 

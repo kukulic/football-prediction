@@ -1,19 +1,18 @@
-package doma.hr.repository;
+package doma.hr.repository.impl;
 
 import doma.hr.model.Group;
+import doma.hr.repository.IGroupStageRepository;
+import doma.hr.rowmapper.GroupRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Repository
-public class GroupStageRepository {
+public class GroupStageRepository implements IGroupStageRepository {
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -22,6 +21,7 @@ public class GroupStageRepository {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
+    @Override
     public List<Group> getAllGroups(Integer competitionId) {
         String query = "SELECT * FROM group_stage WHERE competition_id = :competitionId";
 
@@ -29,9 +29,10 @@ public class GroupStageRepository {
         params.put("competitionId", competitionId);
 
 
-        return namedParameterJdbcTemplate.query(query, params, new GroupStageRepository.GroupRowMapper());
+        return namedParameterJdbcTemplate.query(query, params, new GroupRowMapper());
     }
 
+    @Override
     public List<Group> getGroup(Integer competitionId, String group) {
         String query = "SELECT * FROM group_stage WHERE competition_id =:competitionId AND group_name = :group";
 
@@ -39,20 +40,7 @@ public class GroupStageRepository {
         params.put("competitionId", competitionId);
         params.put("group", group);
 
-        return namedParameterJdbcTemplate.query(query, params, new GroupStageRepository.GroupRowMapper());
+        return namedParameterJdbcTemplate.query(query, params, new GroupRowMapper());
     }
 
-    public class GroupRowMapper implements RowMapper<Group> {
-        @Override
-        public Group mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Group group = new Group();
-
-            group.setCompetitionId(rs.getInt("COMPETITION_ID"));
-            group.setGroup(rs.getString("GROUP_NAME"));
-            group.setPosition(rs.getInt("POSITION"));
-            group.setTeam(rs.getString("TEAM"));
-
-            return group;
-        }
-    }
 }

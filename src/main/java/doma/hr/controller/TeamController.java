@@ -1,6 +1,6 @@
 package doma.hr.controller;
 
-import doma.hr.repository.TeamRepository;
+import doma.hr.repository.impl.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

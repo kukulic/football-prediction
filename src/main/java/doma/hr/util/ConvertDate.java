@@ -14,6 +14,7 @@ public class ConvertDate {
     }
 
     public static Date serverToZagreb() {
+
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         sdf.setTimeZone(TimeZone.getTimeZone("Europe/Zagreb"));

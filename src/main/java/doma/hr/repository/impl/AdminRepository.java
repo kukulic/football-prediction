@@ -1,6 +1,7 @@
-package doma.hr.repository;
+package doma.hr.repository.impl;
 
 import doma.hr.model.User;
+import doma.hr.repository.IAdminRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class AdminRepository {
+public class AdminRepository implements IAdminRepository {
 
     private static final Logger log = LoggerFactory.getLogger(AdminRepository.class);
 
@@ -25,6 +26,7 @@ public class AdminRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    @Override
     public List<User> getUnconfirmedUsers() {
         return null;
     }

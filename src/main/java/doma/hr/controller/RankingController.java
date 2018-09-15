@@ -1,7 +1,7 @@
 package doma.hr.controller;
 
 import doma.hr.model.Rank;
-import doma.hr.repository.CompetitionRepository;
+import doma.hr.repository.impl.CompetitionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
